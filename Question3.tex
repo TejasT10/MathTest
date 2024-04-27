@@ -1,1 +1,19 @@
-
+Suppose \(A\) is a square matrix such that  \(AA^T = I\) and \(\det(A) < 0\). Show that \(\det(A+I) = 0\). 
+\subsection*{Answer 3}
+We are given matrices (of order \(n\)). We wish to prove that \(\det(A+I)=0\). Note that we haven't been asked to find the value of \(\det(A+I)\); we've been given its value directly so we should try and use that information. 
+\\
+We know that matrix product is distributive over the determinant (mod) operation, \textit{i.e.} \(\det(P\times Q)=\det(P)\times\det(Q) \) where \(P, Q\) are both square matrices (of same order).
+\\
+So if we can choose our \(P\) and \(Q\) suitably, we can accomplish the task. We also have the fact that transposing doesn't affect the determinant, \(\Rightarrow \det(A) = \det(A^T)\). 
+\\
+Using the above two facts on the equation \(AA^T = I\), we get \[\det(AA^T) = \det(A)\times \det(A^T) = \det(A)\times \det(A) = \det(A)^2\] we know \(\det(I)=1\). Thus, equating the two expression we obtain \(\det(A)^2 = 1 \Rightarrow \det(A)=-1\) as \(\
+\det(A) < 0\) was given to us.
+\\
+In original multiplicative identity, if we take \(P=A+I\) and \(Q=A^T\) then we get:
+\[\det((A+I)(A^T)) = \det(AA^T + IA^T) = \det(A+I)\times \det(A) \]
+%\(\det(A+I)\)
+Note that \(AA^T=I\) so we have \(AA^T + IA^T = I + A^T\). Also, since \((I+A^T)^T = I^T + (A^T)^T = I + A\) we get \(\det(I+A^T) = \det(I+A)\).
+\\
+Thus, substituting this back into the equation we get \(\det(I+A^T) = \det(I+A) \times \det(A)\). Let if possible \(\det(I+A)\) not be zero. Then as \(\det(I+A^T) = \det(I+A)\) we can simply divide both sides of our equation by \(\det(I+A)\) to get \(\det(A) = 1\) which is a contradiction as \(\det(A)<0\).
+\\
+Thus, \(\det(I+A)\) has to be equal to zero. Hence proved.
