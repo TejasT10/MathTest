@@ -1,0 +1,13 @@
+We have a wheel with 8 sectors on it. A sector is a section of a circular disc bounded between two radii, and 8 sectors here being identical implies the wheel has been sliced up straight, cross and both ways diagonally.
+\\
+Starting from the yellow sector, let us number the sectors in clockwise order. Since we have 8 sectors, we assign them the numbers 1 through 8.
+\\
+Ray counting starts from the yellow sector as well, labelled 1, and moves to the \(n^{th}\) sector. This means after the first move he is at \(n^{th}\) sector, after the second move he is at the \((2n)^{th}\) sector, and in general after \(k\) moves, he is at the \((kn)^{th}\) sector.
+
+We are told that Ray stops after placing a disc on each sector \textbf{exactly once}. This means that no sector is repeated in Ray's process. Note that the absence of repetition is enough to accomplish Ray's process as we only have 8 sectors so if no sector gets repeated for 8 moves, we would have inevitably covered all 8 sectors.
+
+Observe that when we loop around after 8 back to 1 (yellow sector), to get the sector number we essentially take the remainder when the move number is divided by 8. So interpreting this problem in Number Theoretic terms, this is equivalent to saying \(\{n, 2n, 3n, 4n, 5n, 6n, 7n, 8n\}\) form a \textbf{Complete Residue Class modulo 8}, or in simpler words, they all leave different remainders when divided by 8.
+
+This can happen if and only if \textbf{\(n\) is co-prime to 8}, \textit{i.e.} if and only if \textbf{\(n\) is odd}, as otherwise if \(n\) is even, then notice that the move \(4n\) will become divisible by 8, thus yielding remainder 0 and leaving us at sector 8, which is also where the move \(8n\) leaves us.
+
+You can check that \(n\) being odd is sufficient to get us 8 distinct remainders. It can be proven using simple modular arithmetic arguments. Thus, our answer is \(n=3\), \textbf{Option B}, as that is the only odd number among the given options.
