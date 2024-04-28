@@ -1,1 +1,25 @@
+We have a trapezoid \(ABCD\), where \(AD\) and \(BC\) and the parallel sides and angles on side \(BC\), namely \(\angle B\) and \(\angle C\), are acute, implying that side \(BC\) is the base of the trapezoid.
+\\
+To find the length of \(EF\), which is evidently parallel to \(AD\) and \(BC\) (which will be proven soon), we must find a way to link the horizontal and vertical lengths given to us. To do that, we start by completing the figure and creating a triangle: extend rays \(BA\) and \(CD\) to meet at point \(P\). We now have our triangle: \(\triangle PBC\).
+\\
+We start by proving that points \(P,M,N\) are collinear. To do so, we invoke the concept of similarity of triangles. Draw segment \(PM\) to meet side \(BC\) at point \(N'\). We will show \(N'=N\). Observe that triangles \(PAD \text{ and } PBC\) are similar, by \textbf{AA similarity criterion} due to angles induced by transversal on parallel lines: \(BC \parallel AD \Rightarrow \angle PAD = \angle PBC, \angle PDA = \angle PCB\). This gives \(\triangle PAD \sim \triange PBC \). Using \textit{corresponding sides of similar triangles (\textbf{cpst})} result, which tells us that corresponding sides of similar triangles bear a constant ratio, we get: \(\frac{AD}{BC} = \frac{PA}{PB}\). 
+\\
+By identical logic, we also get another similarity: \(BC \parallel AD \Rightarrow \angle PAN' = \angle PBM, \angle PN'A = \angle PMB \Rightarrow \triangle PAN' \sim \triange PBM\). Again employing \textit{cpst}, we obtain: \(\frac{AN'}{BM} = \frac{PA}{PB}\).
+\\
+Combining the two equalities obtained thus far, we get: \(\frac{PA}{PB} = \frac{AN'}{BM} = \frac{AD}{BC} \Rightarrow AN'\times BC = BM \times AD\). Note that \(M\) is the midpoint of \(BC\), which means \(\frac{BM}{BC} =\frac{1}{2} \Rightarrow BC = 2\times BM\). Substituting this into our obtain relation, we get: \(AN'\times BC = AN' \times 2 \times BM = BM \times AD \Rightarrow 2\times AN' = AD \). 
+\\
+This means \(\frac{AN'}{AD} = \frac{1}{2} \), which implies \(N'\) is the midpoint of \(AD\). But we already know that \(N\) is the midpoint of \(AD\), which proves \(N'=N\) and thus the collinearity of \(P-N-M\) is established.
 
+Now we are ready to use similarity to find the value of \(EF\), for which we need the similarity ratio. To obtain that, we make use of the \textbf{Apollonius Theorem}, which lets us find the length of median using this rule: \(a^2 + c^2 = 2m^2 + b^2/2\), where \(a,b,d\) are the side-lengths of the triangle and \(m\) is the median onto side \(b\). Putting \(a=PB, c=PC, b=BC, m=PM\) we get: \(PB^2 + PC^2 = 2PM^2 + \frac{1}{2}BC^2\).
+\\
+Now we invoke the angle conditions given to us: \(\angle B = 30^\circ, \angle C = 60^\circ\). The \textbf{angle sum property} in \(\triangle PBC\) tells us \(\angle P + \angle B + \angle C = 180^\circ\). Thus, \(\angle P = 180^\circ - \angle B - \angle C = 180^\circ - 30^\circ - 60^\circ \Rightarrow \angle P = 90^\circ\). This implies \(\angle P\) is a right angle and thus, the \textbf{Pythagorean theorem} is applicable in \(\triangle PBC: PB^2 + PC^2 = BC^2\).
+\\
+Using this in our earlier relation, we get: \(2PM^2 + \frac{1}{2}BC^2 = PB^2 + PC^2 = BC^2 \\ \Rightarrow 2PM^2 = BC^2 - \frac{1}{2}BC^2 = \frac{1}{2}BC^2 \\ \Rightarrow 4PM^2 = BC^2 = (7)^2 = 49\\ \Rightarrow PM^2 = \frac{49}{4} =\frac{7^2}{2^2} \\ \Rightarrow PM = \sqrt{\frac{49}{4}} = \frac{7}{2} = 3.5\)
+\\
+Thus, \(PM=3.5\). Of this, we know \(P-N-M\) and \(NM = 3\), so \(PM = PN + NM \Rightarrow PN = PM - NM = 3.5 - 3 = 0.5\). Thus, this gives us the needed ratio in our triangles: \(\frac{PA}{PB} = \frac{PN}{PM}=\frac{0.5}{3.5} = \frac{1}{7} \Rightarrow PB = 7PA\).
+\\
+Now since \(E\) and \(F\) are midpoints of sides \(AB\) and \(CD\) respectively, we have \(\frac{AE}{EB} = \frac{DF}{FC} = 1\). Thus, by \textbf{Basic Proportionality theorem} (more precisely its converse), we get \(EF\) is parallel to \(BC\) and \(AD\), and hence by our earlier similarity argument, \(\triangle PAD \sim \triangle PBC \sim \triangle PEF\).
+\\
+Note again that as \(E\) is the midpoint of \(AB\), \(PE = \frac{PA+PB}{2} = \frac{PB+\frac{1}{7}PA}{2} = \frac{4}{7}PB\) Employing \textit{cpst} for the last time, \(\triangle PBC \sim \triangle PEF \Rightarrow \frac{PB}{PE} = \frac{BC}{EF} \Rightarrow \frac{PB}{\frac{4}{7}PB} = \frac{7}{4} = \frac{7}{EF} \\ \Rightarrow EF = 4\) 
+\\ 
+Thus we finally have our answer: EF = 4.
