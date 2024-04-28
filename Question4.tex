@@ -1,1 +1,16 @@
+The derivative of a function is a mathematical entity which describes the rate of change of the function. It is also a function which is defined at all points where the function is differentiable.
+\\
+So to start solving this question, we will first check its domain, on which the function \(y= \arcsin x+x\sqrt{1-x^{2}}\) is defined. Note that \(\arcsin x\) is defined on \([-1,1]\) and same goes for \(\sqrt{1-x^2}\). Both these functions are differentiable over their entire domains, thus \(y\) is differentiable over \((-1,1)\) (excluding the edge points as both sided derivatives do not exist there).
+\\
+Addition rule for evaluating derivatives tells us that for any two differentiable functions \(f\) and \(g\), \((f+g)' = f' + g'\) (where \(f'\) denotes the derivative of \(f\) and similarly for \(g\)). Derivative of the sum is sum of the derivatives, so we can evaluate \(\dv{(\arcsin x)}{x}\) and \(\dv{(x\sqrt{1-x^2})}{x}\) independently and add them up in the end.
+\begin{itemize}
+    \item Derivative of \(\arcsin x\) is known to be \(\frac{1}{\sqrt{1-x^2}}\). This can be proven by integrating the said derivative using the substitution \(x=sin(t)\) for a real variable \(t\).
+    \item To evaluate the derivative of our second term, we use the product rule which says: \((fg)' = f'g + g'f\). So putting \(f = x\) and \(g = \sqrt{1-x^2}\) we obtain: \(\dv{(x\sqrt{1-x^2})}{x} = \dv{x}{x}\cdot \sqrt{1-x^2} + x\cdot \dv{\sqrt{1-x^2}}{x} = 1\cdot\sqrt{1-x^2} + x\cdot(\sqrt{1-x^2})'\)
+    \item Derivative of \(\sqrt{1-x^2}\) can computed using chain rule, which says: \(f(g(x))' = f'(g(x))\cdot g'(x)\). So putting \(f = \sqrt x\) and \(g=1-x^2\), and using \(\dv{\sqrt x}{x} = \frac{1}{2\sqrt x}\) (by power rule), we get: \((\sqrt{1-x^2})' = \frac{1}{2\sqrt{1-x^2}}\cdot (-2x) = \frac{-x}{\sqrt{1-x^2}}\).
+\end{itemize}
+Thus, compiling everything, from step 2 we obtain: 
+\[\dv{(x\sqrt{1-x^2})}{x} = \sqrt{1-x^2} + x\cdot\dv{(\sqrt{1-x^2})}{x} = \sqrt{1-x^2} + x\cdot\frac{(-x)}{\sqrt{1-x^2}}\]
 
+Simplifying the fraction, we get: \(\dv{(x\sqrt{1-x^2})}{x} = \frac{\sqrt{1-x^2}\cdot \sqrt{1-x^2} + x\cdot(-x)}{\sqrt{1-x^2}} =  \frac{1-x^2 - x^2}{\sqrt{1-x^2}}\).
+
+Thus, our final answer is \(\dv{(x\sqrt{1-x^2})}{x} = \frac{1-2x^2}{\sqrt{1-x^2}}\).
